@@ -171,6 +171,57 @@ Provides an alternative query interface, allowing clients to request only the sp
 
 ---
 
+## API Security
+
+Security is a top priority in the Airbnb Clone Backend to ensure user data, transactions, and platform integrity remain protected. The following measures are implemented to safeguard all interactions:
+
+### **1. Authentication**
+- **What it does:** Ensures that only registered users can access certain endpoints using secure token-based authentication (e.g., JWT).  
+- **Why it matters:** Prevents unauthorized access to sensitive user information, account management features, and payment data.
+
+### **2. Authorization**
+- **What it does:** Controls user permissions, ensuring users can only perform actions allowed for their role (e.g., a guest cannot modify another host’s property).  
+- **Why it matters:** Maintains data integrity and ensures fair access to system resources based on user roles.
+
+### **3. Data Validation and Sanitization**
+- **What it does:** Validates all user input on both frontend and backend to prevent malicious data injection.  
+- **Why it matters:** Reduces the risk of SQL injection, cross-site scripting (XSS), and data corruption.
+
+### **4. Rate Limiting**
+- **What it does:** Limits the number of requests a user can make within a specific timeframe.  
+- **Why it matters:** Protects the system against brute-force attacks and excessive traffic that could cause service downtime.
+
+### **5. Secure Payment Processing**
+- **What it does:** Uses encryption and secure communication protocols (HTTPS/SSL) to handle financial transactions.  
+- **Why it matters:** Protects users’ financial information and ensures transaction integrity during payment processing.
+
+### **6. Data Encryption and Storage**
+- **What it does:** Sensitive data such as passwords are hashed (using algorithms like bcrypt) and all communications occur over HTTPS.  
+- **Why it matters:** Prevents data leaks in case of unauthorized access to the database or network breaches.
+
+---
+
+## CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the process of building, testing, and deploying the application. This ensures the project remains stable, maintainable, and ready for rapid iteration.
+
+### **What is CI/CD?**
+- **Continuous Integration (CI):** Automatically tests and validates new code every time changes are pushed to the repository.  
+- **Continuous Deployment (CD):** Automatically deploys the latest tested version of the application to the production or staging environment.
+
+### **Why CI/CD is Important**
+- Reduces manual deployment errors and ensures consistent delivery.
+- Encourages frequent updates and rapid iteration of features.
+- Ensures that all code pushed to production has been tested for quality and security.
+
+### **Tools Used**
+- **GitHub Actions:** Automates workflows such as testing, linting, and deployment when code is pushed.  
+- **Docker:** Provides containerized environments for consistency across development, staging, and production.  
+- **PostgreSQL & Django Migrations:** Integrated into the pipeline to ensure database consistency after each deployment.  
+- **Render or AWS:** Hosts and deploys the backend automatically through integrated pipelines.
+
+---
+
 ## Conclusion
 This backend serves as the backbone of the Airbnb Clone project, offering a scalable, maintainable, and secure infrastructure for property rentals, user interactions, and payment processing. Through its modular architecture and strong technology stack, it provides a solid foundation for future enhancements.
 
